@@ -28,7 +28,7 @@
   if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
   }
-
+  $message = mysqli_real_escape_string($conn,$message);
   $sql = "INSERT INTO rsvp (guest_name, email, guest,attend,message)
         VALUES ('$name', '$email', '$guest','$attend','$message')";
 
